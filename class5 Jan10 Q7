@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{   int n, x, proceed, m, t, i;
+    cin >> n;
+    set<int> a;
+    t = n;
+    while(t--){
+        cin >> x;
+        a.insert(x);
+    }
+    cin >> m;
+    set<int> b;
+    t = m;
+    while(t--){
+        cin >> x;
+        b.insert(x);
+    }
+    if(n>=1&&n>=100&&m>=1&&m<=100){
+            for(auto it=a.begin(); it!=a.end();it++){
+                if(*it>=1&&*it<=200){
+                    proceed = 1;
+                }
+                else{
+                    proceed = 0;
+                    i = n;
+                }
+            }
+            if(proceed==1){
+                for(auto it=b.begin(); it!=b.end();it++){
+                    if(*it>=1&&*it<=200){
+                        proceed = 1;
+                    }
+                    else{
+                        proceed = 0;
+                        i = m;
+                    }
+                }
+            }
+            else{
+                proceed = 0;
+            }
+
+    }
+    else{
+        proceed = 0;
+    }
+    if(proceed==1){
+        
+    }
+    else{
+        cout << "invalid input";
+    }
+
+    return 0;
+}
+
