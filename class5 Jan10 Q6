@@ -1,0 +1,55 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{   int i, n, t, l, proceed;
+    string a;
+    cin >> n;
+    set<string> s;
+    vector<string> v;
+    t = n;
+    while(t!=0){
+        cin >> a;
+        v.push_back(a);
+        t--;
+    }
+    if(n>=1&&n<=100){
+        for(i=0;i<n;i++){
+            l = v[i].size();
+            if(l>=1&&l<=100){
+                proceed = 1;
+            }
+            else{
+                proceed = 0;
+                i = n;
+            }
+        }
+    }
+    else{
+        proceed  =0;
+    }
+    if(proceed==1){
+        for(i=0;i<n;i++){
+        auto it = s.find(v[i]);
+        if(it==s.end()){
+            cout << "No" << endl;
+            s.insert(v[i]);
+        }
+        else{
+            cout << "Yes" << endl;
+        }
+    }
+    }
+    else{
+        cout << "invalid input";
+    }
+
+
+    return 0;
+}
+
