@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    map<int, string> m;
+    string a;
+    int n, x, y, t, i, z, j;
+    cin >> n;
+    for(i=0;i<n;i++){
+        cin >> x >> y >> a;
+        z = x*10+y;
+            m.insert({z, a});
+    }
+    cin >> t;
+    vector<int> c;
+    for(i=0;i<t;i++){
+        cin >> x >> y;
+        z = 10*x+y;
+        c.push_back(z);
+    }
+    for(i=0;i<t;i++){
+        for(auto it=m.end();it!=m.begin();it){
+            j = c[i];
+            if(m.key_comp((*it)==j)){
+                cout << it->second << endl;
+                it = m.begin();
+            }
+        }
+    }
+
+    return 0;
+}
